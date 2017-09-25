@@ -1,1 +1,97 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background: #262626;
+  font-family: sans-serif;
+}
+
+.loading--inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 110px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+}
+.loading--inner:after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+.loading--inner .loading--box {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+}
+.loading--inner .loading--box.dbl-width {
+  width: 22px;
+}
+.loading--inner .loading--box.upper {
+  height: 18px;
+}
+.loading--inner .loading--box.hang {
+  height: 8px;
+}
+.loading--inner .loading--box.sink {
+  height: 5px;
+  width: 2px;
+}
+.loading--inner .loading--box.dbl-height {
+  height: 30px;
+}
+.loading--inner .loading--box-animate {
+  animation: loading--box-animation 3s infinite ease-in-out;
+}
+.loading--inner .loading--text {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  position: absolute;
+  line-height: 1.6em;
+  top: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  animation: loading--text-animation 2s infinite;
+}
+
+@keyframes loading--text-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loading--box-animation {
+  0% {
+    opacity: 0;
+    transform: translate(-20px, 0);
+  }
+  10% {
+    opacity: 0;
+    transform: translate(-20px, 0);
+  }
+  25% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  90% {
+    opacity: 0;
+    transform: translate(20px, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(20px, 0);
+  }
+}
